@@ -17,7 +17,7 @@ module.exports = () => {
     plugins: [
       // html webpack plugin
       new HtmlWebpackPlugin({
-        template: '.index.html',
+        template: './index.html',
         title: 'jate'
       }),
       // manifest plugin
