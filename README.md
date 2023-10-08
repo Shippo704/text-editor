@@ -39,10 +39,18 @@ Users can type whatever they like into the text editor, and the app will store t
 
 ## Images
 
+I used the application, restarted my computer, then relaunched the application both on the web and as an offline app. The single line of code I wrote before restarting my computer persisted.
 
+Here's an image of the web version of the application:
+
+![Web Version](./client/src/images/WebVersion.jpeg)
+
+Here is an image of the application in offline app mode:
+
+![App Version](./client/src/images/AppVersion.PNG)
 
 ## URLs
 
 GitHub Repo: https://github.com/Shippo704/text-editor
 
-Deployed Heroku App: 
+Deployed Heroku App: https://polar-depths-17082-ab74c82ef2ec.herokuapp.com/
