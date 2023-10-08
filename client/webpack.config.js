@@ -2,8 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
-// add plugin for CSS
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => {
   return {
@@ -21,11 +19,6 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: '.index.html',
         title: 'jate'
-      }),
-      // css webpack plugin
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFileName: '[id].css'
       }),
       // manifest plugin
       new InjectManifest({
@@ -57,11 +50,6 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
-        // images
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
         },
         // make babel work
         {
