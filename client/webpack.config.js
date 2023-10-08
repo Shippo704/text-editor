@@ -20,7 +20,7 @@ module.exports = () => {
       // html webpack plugin
       new HtmlWebpackPlugin({
         template: '.index.html',
-        title: 'text-editor'
+        title: 'jate'
       }),
       // css webpack plugin
       new MiniCssExtractPlugin({
@@ -34,8 +34,8 @@ module.exports = () => {
       }),
       // pws manifest plugin
       new WebpackPwaManifest({
-        name: 'text-editor',
-        short_name: 'text-editor',
+        name: 'jate',
+        short_name: 'jate',
         description: 'This is a text editor',
         background_color: '#7eb4e2',
         theme_color: '#7eb4e2',
