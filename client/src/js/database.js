@@ -22,7 +22,7 @@ export const putDb = async (content) => {
     const newTx = connectDB.transaction('jate', 'readwrite');
 
     // open the object store
-    const store = tx.objectStore('jate');
+    const store = newTx.objectStore('jate');
 
     // make the PUT request
     const putRequest = store.put({id: 1, value: content});
@@ -40,6 +40,32 @@ export const putDb = async (content) => {
 
 
 // TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  try {
+    // connect to db
+    const connectDB = await openDB('jate', 1);
+
+    // create new transaction and define privileges
+    const newTx = connectDB.transaction('jate', 'readonly');
+
+    // open the object store
+    const store = newTx.objectStore('jate');
+
+    // get all data
+    const getRequest = store.getAll();
+
+    // get result status
+    const result = await getRequest;
+    console.log('data retrieved: ', result);
+
+    // return results
+    return result?.value;
+  }
+  // catch errors
+  catch (error) {
+    console.error('getDb not implemented');
+  }
+};
+
 
 initdb();
